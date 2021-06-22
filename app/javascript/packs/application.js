@@ -9,6 +9,18 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+// import { loadDynamicBannerText } from '../components/banner';
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+console.log("Hello from app/javascript/packs/application.js!");
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initUpdateNavbarOnScroll();
+  // loadDynamicBannerText();
+});

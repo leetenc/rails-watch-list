@@ -1,0 +1,17 @@
+<div class='container mx-4'>
+
+  <h1>New Bookmark for <%= @list.name %></h1>
+
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment, as: :text, input_html: {rows: 4, cols: 8}, :label => 'Enter comment'%>
+    <br>
+    <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
+    <br>
+  <% end %>
+
+  <br>
+  <p class="text-danger"><%= @bookmark.errors.full_messages.first %></p>
+  <br>
+  <%= link_to 'Back', list_path(@list) %>
+</div>

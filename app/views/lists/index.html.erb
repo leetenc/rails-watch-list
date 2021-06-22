@@ -1,0 +1,21 @@
+<div class="home-banner">
+  <h1 class="display-1">The Watch List</h1>
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+</div>
+
+<div class="container my-4">
+  <h1>Lists</h1>
+  <%= link_to "Add List", new_list_path(), class: "btn btn-primary" %>
+  <div class="mt-4">
+    <ul class="list-group">
+      <% @lists.each do |list| %>
+        <li class="list-group-item">
+          <%= link_to list.name, list_path(list) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
